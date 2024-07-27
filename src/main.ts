@@ -4,24 +4,15 @@ import {
   provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 export type Decoration = {
-  readonly color?: string;
-};
-
-export type TextDecoration = Decoration & {
-  readonly cssClass?: string;
+  cssClass: string;
 };
 
 export type TextInfo = {
   readonly text: string;
-  readonly decoration?: TextDecoration;
-};
-
-export type Slide = {
-  readonly texts?: TextInfo[];
+  readonly decoration?: string;
 };
 
 @Component({
@@ -29,16 +20,9 @@ export type Slide = {
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <h1>Hello from {{ name }}!</h1>
-    @if (x(); as _x) {
-    @for(data of _x; track data) {
-    @if (data.texts; as texts) {
-    @for (txt of texts; track txt) {
-      <span class="{{txt.decoration?.cssClass ?? 'text-white'}}"></span>
-    }
-  }
-}
-}
+    <h1>Hello from {{ name }}!</h1>    
+      <span class="{{text.decoration?.cssClass ?? 'text-white'}}"></span>
+
     <a target="_blank" href="https://angular.io/start">
       Learn more about Angular
     </a>
@@ -46,7 +30,7 @@ export type Slide = {
 })
 export class App {
   name = 'Angular';
-  x = signal<Slide[]>([]);
+  text: TextInfo = {text: 'example'}
 }
 
 bootstrapApplication(App, {
