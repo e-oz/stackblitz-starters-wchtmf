@@ -1,0 +1,37 @@
+{
+  "name": "stackblitz-angular-18",
+  "version": "18.2.0-next.2",
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.0-next.2",
+    "@angular/common": "^18.2.0-next.2",
+    "@angular/compiler": "^18.2.0-next.2",
+    "@angular/core": "^18.2.0-next.2",
+    "@angular/forms": "^18.2.0-next.2",
+    "@angular/platform-browser": "^18.2.0-next.2",
+    "@angular/platform-browser-dynamic": "^18.2.0-next.2",
+    "@angular/router": "^18.2.0-next.2",
+    "rxjs": "^8.0.0-alpha.14",
+    "tslib": "^2.6.2",
+    "typescript": "~5.6.0-beta",
+    "zone.js": "~0.14.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.0-next.2",
+    "@angular/cli": "^18.2.0-next.2",
+    "@angular/compiler-cli": "^18.2.0-next.2",
+    "@angular/language-service": "^18.2.0-next.2",
+    "@types/node": "^20.12.7",
+    "codelyzer": "^6.0.2",
+    "ts-node": "11.0.0-beta.1"
+  },
+  "overrides": {
+    "rxjs": "$rxjs",
+    "typescript": "$typescript"
+  }
+}
